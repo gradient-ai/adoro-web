@@ -15,35 +15,6 @@
       "warn"
     ],
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "import/order": [
-      "warn",
-      {
-        "groups": [
-          [
-            "builtin",
-            "external"
-          ],
-          [
-            "internal",
-            "parent"
-          ],
-          [
-            "sibling",
-            "index"
-          ],
-          "type",
-          "object"
-        ],
-        "newlines-between": "always",
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
-        }
-      }
-    ],
-    "complexity": "warn",
-    "no-console": [
-      "warn"
-    ]
+    "complexity": "warn"
   }
 }

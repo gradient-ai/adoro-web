@@ -1,8 +1,8 @@
-import Document, { Head, Html, Main, NextScript } from "next/document";
+import Document, { Head, Html, Main, NextScript } from "next/document"
 
-const APP_NAME = "Adoro";
+const APP_NAME = "Adoro"
 const APP_DESCRIPTION =
-  "A deepfake app that lets you perform 1960s Portuguese love songs using only a selfie.";
+  "A deepfake app that lets you perform 1960s Portuguese love songs using only a selfie."
 
 export default class DocumentElement extends Document {
   render() {
@@ -46,6 +46,6 @@ export default class DocumentElement extends Document {
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }

@@ -1,5 +1,5 @@
-import { Heading } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react"
 
 export default function HomeScreen() {
-  return <Heading>WAGMI</Heading>;
+  return <Heading>WAGMI</Heading>
 }

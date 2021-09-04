@@ -1,10 +1,10 @@
-import "styles/globals.css";
+import "styles/globals.css"
 
-import { ChakraProvider, Container, Flex } from "@chakra-ui/react";
-import { AppProps } from "next/app";
-import Head from "next/head";
-import React from "react";
-import theme from "styles/theme";
+import { ChakraProvider, Container, Flex } from "@chakra-ui/react"
+import { AppProps } from "next/app"
+import Head from "next/head"
+import React from "react"
+import theme from "styles/theme"
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -21,5 +21,5 @@ export default function App({ Component, pageProps }: AppProps) {
         </Container>
       </Flex>
     </ChakraProvider>
-  );
+  )
 }
