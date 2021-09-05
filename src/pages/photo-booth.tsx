@@ -37,6 +37,7 @@ export default function PhotoBooth({ size = 256 }) {
   const router = useRouter()
   const initiateTimeMachine = useCallback(async () => {
     const { data: params } = await API.post("/adoro", { image })
+    console.log(params)
     router.push({
       pathname: "/time-machine",
       query: params,

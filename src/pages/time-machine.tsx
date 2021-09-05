@@ -20,7 +20,7 @@ interface AdoroPreviewProps {
 }
 
 const AdoroPreview: React.FC<AdoroPreviewProps> = ({
-  basePath,
+  basePath: path,
   framesCount,
 }) => {
   const {
@@ -36,7 +36,7 @@ const AdoroPreview: React.FC<AdoroPreviewProps> = ({
 
   const currentFrame = useThrottle(frameIndex, { wait: 10 })
 
-  const currentImageURL = `${baseURL}/${basePath}/${currentFrame}.jpg`
+  const currentImageURL = `${baseURL}/${path}/${currentFrame}.jpg`
   const previousImageURL = usePrevious(currentImageURL)
 
   const onFrameLoaded = useCallback(() => {
@@ -44,18 +44,19 @@ const AdoroPreview: React.FC<AdoroPreviewProps> = ({
   }, [addFrames])
 
   const onFrameNotReady = useCallback(() => {
-    // HACK: This will toggle between 0 and 2 until the initial frame is done processing
-    if (frameIndex === 0) {
-      return addFrames(2)
-    }
+    // If the first frame is not ready yet, then jump ahead,
+    // which will trigger an error,
+    // which will re-rerun this function but subtract frames back to 0 again
+    // thereby rerendering and retrying
+    if (frameIndex === 0) return addFrames(1)
 
-    subtractFrames(5)
+    // clamped [min] to 0 through this use of 'min' above
+    subtractFrames(3)
   }, [frameIndex, addFrames, subtractFrames])
 
   const router = useRouter()
-
   useTimeout(
-    () => router.push({ pathname: "/share-meme", query: { path: basePath } }),
+    () => router.push({ pathname: "/share-meme", query: { path } }),
     isAdoroComplete ? 3000 : null,
   )
 
