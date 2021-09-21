@@ -40,7 +40,9 @@ const AdoroPreview: React.FC<AdoroPreviewProps> = ({
   const previousImageURL = usePrevious(currentImageURL)
 
   const onFrameLoaded = useCallback(() => {
-    addFrames(2)
+    setTimeout(() => {
+      addFrames(2)
+    }, 500)
   }, [addFrames])
 
   const onFrameNotReady = useCallback(() => {
@@ -48,10 +50,12 @@ const AdoroPreview: React.FC<AdoroPreviewProps> = ({
     // which will trigger an error,
     // which will re-rerun this function but subtract frames back to 0 again
     // thereby rerendering and retrying
-    if (frameIndex === 0) return addFrames(1)
-
-    // clamped [min] to 0 through this use of 'min' above
-    subtractFrames(3)
+    if (frameIndex === 0) {
+      addFrames(1)
+    } else {
+      // clamped [min] to 0 through the use of 'min' above
+      subtractFrames(3)
+    }
   }, [frameIndex, addFrames, subtractFrames])
 
   const router = useRouter()

@@ -1,12 +1,12 @@
 /* eslint-disable no-debugger */
 import { Box, HStack, IconButton, Image, VStack } from "@chakra-ui/react"
 import { useBoolean } from "ahooks"
+import HeadOutline from "assets/head-outline"
 import { useRouter } from "next/router"
 import React, { useCallback, useRef, useState } from "react"
 import { RiCameraLine, RiSkipBackFill, RiVideoUploadFill } from "react-icons/ri"
 import Webcam from "react-webcam"
 import { API } from "services/api"
-import HeadOutline from "assets/head-outline"
 
 const useCamera = () => {
   const [isCameraOnline, { setTrue: setCameraOnline }] = useBoolean(false)
@@ -77,7 +77,7 @@ export default function PhotoBooth({ size = 256 }) {
             onUserMediaError={setCameraError}
           />
           <Box pos="absolute" top="0" right="0" bottom="0" left="0">
-            <HeadOutline />        
+            <HeadOutline />
           </Box>
         </Box>
       </Box>

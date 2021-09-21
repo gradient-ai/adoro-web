@@ -1,4 +1,4 @@
-const withPWA = require("next-pwa");
+const withPWA = require("next-pwa")
 
 /** @type {import('next').NextConfig} */
 module.exports = withPWA({
@@ -14,5 +14,5 @@ module.exports = withPWA({
     register: true,
   },
   reactStrictMode: true,
-  exportTrailingSlash: true,
-});
+  trailingSlash: true,
+})
