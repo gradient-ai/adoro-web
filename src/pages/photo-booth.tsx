@@ -6,6 +6,7 @@ import React, { useCallback, useRef, useState } from "react"
 import { RiCameraLine, RiSkipBackFill, RiVideoUploadFill } from "react-icons/ri"
 import Webcam from "react-webcam"
 import { API } from "services/api"
+import HeadOutline from "assets/head-outline"
 
 const useCamera = () => {
   const [isCameraOnline, { setTrue: setCameraOnline }] = useBoolean(false)
@@ -62,18 +63,23 @@ export default function PhotoBooth({ size = 256 }) {
             alt="Your beautiful face"
           />
         )}
-        <Webcam
-          style={{ display: image ? "none" : "block" }}
-          mirrored
-          height={size}
-          width={size}
-          videoConstraints={{ facingMode: "user", width: size, height: size }}
-          ref={ref}
-          screenshotQuality={1}
-          screenshotFormat="image/png"
-          onUserMedia={setCameraOnline}
-          onUserMediaError={setCameraError}
-        />
+        <Box pos="relative" float="left">
+          <Webcam
+            style={{ display: image ? "none" : "block" }}
+            mirrored
+            height={size}
+            width={size}
+            videoConstraints={{ facingMode: "user", width: size, height: size }}
+            ref={ref}
+            screenshotQuality={1}
+            screenshotFormat="image/png"
+            onUserMedia={setCameraOnline}
+            onUserMediaError={setCameraError}
+          />
+          <Box pos="absolute" top="0" right="0" bottom="0" left="0">
+            <HeadOutline />        
+          </Box>
+        </Box>
       </Box>
       {image ? (
         <HStack>
