@@ -42,7 +42,7 @@ const AdoroPreview: React.FC<AdoroPreviewProps> = ({
   const onFrameLoaded = useCallback(() => {
     setTimeout(() => {
       addFrames(2)
-    }, 500)
+    }, 100)
   }, [addFrames])
 
   const onFrameNotReady = useCallback(() => {

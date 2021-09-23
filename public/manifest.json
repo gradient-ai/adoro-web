@@ -1,6 +1,6 @@
 {
+  "name": "Adoro — Sing Italian Opera!",
   "short_name": "Adoro",
-  "name": "Adoro — Dance in Portuguese",
   "lang": "en",
   "start_url": "/",
   "background_color": "#FFFFFF",
@@ -8,5 +8,13 @@
   "dir": "ltr",
   "display": "standalone",
   "orientation": "portrait",
-  "prefer_related_applications": false
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/icons/adoro-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
 }

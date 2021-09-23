@@ -14,5 +14,5 @@ module.exports = withPWA({
     register: true,
   },
   reactStrictMode: true,
-  trailingSlash: true,
+  exportTrailingSlash: true,
 })
