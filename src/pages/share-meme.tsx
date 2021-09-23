@@ -44,7 +44,7 @@ export default function ShareMeme() {
             <video
               loop
               autoPlay
-              muted
+              playsinline
               width={256}
               height={256}
               src={adoroURL}
