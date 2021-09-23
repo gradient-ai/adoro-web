@@ -2,9 +2,10 @@ import Document, { Head, Html, Main, NextScript } from "next/document"
 
 const APP_NAME = "Adoro"
 const APP_DESCRIPTION =
-  "A deepfake app that lets you perform 1960s Portuguese love songs using only a selfie."
+  "A deepfake app that lets you perform Italian opera classics using only a selfie."
 
 export default class DocumentElement extends Document {
+
   render() {
     return (
       <Html lang="en">
@@ -21,13 +22,18 @@ export default class DocumentElement extends Document {
           <meta name="mobile-web-app-capable" content="yes" />
           <meta name="theme-color" content="#FFFFFF" />
 
-          {/* add your own app-icon */}
-          {/* <link
+          <meta name="twitter:card" content={APP_DESCRIPTION} />
+          <meta name="twitter:site" content="@hellopaperspace" />
+          <meta name="twitter:title" content={APP_NAME} />
+          <meta name="twitter:description" content="How to embed a Twitch video into a React application or website using the ReactPlayer npm package." />
+          <meta name="twitter:image" content="/icons/adoro-192x192x.png" />
+
+          <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/icons/apple-touch-icon.png"
+            href="../src/assets/adoro-touch-icon.png"
           />
-          <link rel="shortcut icon" href="/app-icon.png" /> */}
+          <link rel="shortcut icon" href="../src/assets/adoro-favicon.png" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
@@ -40,7 +46,12 @@ export default class DocumentElement extends Document {
           />
 
           <link rel="manifest" href="/manifest.json" />
+          
         </Head>
+
+      
+
+
         <body>
           <Main />
           <NextScript />

@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
         />
       </Head>
-      <Flex w="100vw" h="100vh" bg="yellow.200">
+      <Flex w="100vw" h="100vh" bg="whiteAlpha.300">
         <Container centerContent py={8}>
           <Component {...pageProps} />
         </Container>
